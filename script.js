@@ -1,4 +1,3 @@
-<script scr="script.js"></script>
 
 const firebaseConfig = {
   apiKey: "AIzaSyByhH0eHPjM0f1pAcRk5_Q5v0t_iPylaH0",
@@ -93,5 +92,5 @@ function createStars(count) {
 
 createStars(150);
 
-
+<script scr="script.js"></script>
 
