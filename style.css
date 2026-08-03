@@ -8,7 +8,8 @@ body {
   font-family: Arial, sans-serif;
   padding: 20px;
   animation: gradientShift 20s ease infinite;
-
+  opacity: 0;
+  transition: opacity 0.8s ease;
 }
 
 /* Body loaded for fade-in */
