@@ -1,10 +1,25 @@
 Body {
-    background: #0b0f2f;
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #0b0f2f, #000)
+    overflow: hidden;
     colour: white;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     padding: 20px;
 }
 
+/*Star animation */
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% {opacity: 0.2; }
+}
+/* Headings and links */
 h1 {
     colour: #ffd700;
 }
@@ -12,4 +27,26 @@ h1 {
 a {
     colour: #87cefa;
     font-size: 20px;
+    text-decoration: none;
 }
+
+a:hover {
+    colour: #b0e0ff;
+}
+
+/* Buttons */
+Button {
+    background: #1e90ff;
+    border: none;
+    padding: 10px 20px;
+    colour: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #63b3ff;
+    transform: scale(1.05);
+}
+
