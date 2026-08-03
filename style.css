@@ -3,7 +3,7 @@ Body {
     height: 100vh;
     background: radial-gradient(circle at top, #0b0f2f, #000)
     overflow: hidden;
-    colour: white;
+    color: white;
     font-family: Arial, sans-serif;
     padding: 20px;
 }
@@ -21,17 +21,17 @@ Body {
 }
 /* Headings and links */
 h1 {
-    colour: #ffd700;
+    color: #ffd700;
 }
 
 a {
-    colour: #87cefa;
+    color: #87cefa;
     font-size: 20px;
     text-decoration: none;
 }
 
 a:hover {
-    colour: #b0e0ff;
+    color: #b0e0ff;
 }
 
 /* Buttons */
@@ -39,7 +39,7 @@ Button {
     background: #1e90ff;
     border: none;
     padding: 10px 20px;
-    colour: white;
+    color: white;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
