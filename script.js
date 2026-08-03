@@ -1,19 +1,19 @@
-
+// Firebase setup
 const firebaseConfig = {
-  apiKey: "AIzaSyByhH0eHPjM0f1pAcRk5_Q5v0t_iPylaH0",
+  apiKey: "AIzaSyBybH0eHPjM0f1pAcRk5_Q5v0t_iPylaH0",
   authDomain: "starlight-beginners.firebaseapp.com",
   projectId: "starlight-beginners",
-  storageBucket: "starlight-beginners.firebasestorage.app",
-  messagingSenderId: "481052339406",
-  appId: "1:481052339406:web:f918a8116149d72f26749f",
+  storageBucket: "starlight-beginners.appspot.com",
+  messagingSenderId: "48105239406",
+  appId: "1:48105239406:web:f918a8116149d72f67491d",
   measurementId: "G-YK4LD36X0F"
 };
-firebaseConfig.initializeApp(firebaseConfig);
+
+firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
-const stroage = firebase.storage();
+const storage = firebase.storage();
 const auth = firebase.auth();
-
 
 // Fade-in effect on page load
 window.addEventListener('load', () => {
@@ -35,18 +35,4 @@ function createStars(count) {
 }
 
 createStars(150);
-
-// Scroll reveal for boxes and sections
-const revealElements = document.querySelectorAll('.box, h2, p, form, div');
-
-window.addEventListener('scroll', () => {
-  revealElements.forEach(el => {
-    const position = el.getBoundingClientRect().top;
-    if (position < window.innerHeight - 100) {
-      el.classList.add('revealed');
-    }
-  });
-});
-
-<script scr="script.js"></script>
 
