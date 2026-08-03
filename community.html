@@ -1,45 +1,42 @@
-<link rel="stylesheet" href="style.css">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Community Corner</title>
+</head>
 <body>
-
   <div class="container">
+    <h1>Community Corner</h1>
 
-    <!-- ALL your page content goes here -->
-    <h1>Welcome to Starlight Beginners</h1>
+    <div class="box">
+      <h2>Share Your Stargazing Story</h2>
+      <form id="storyForm">
+        <label>Your Name:</label><br>
+        <input type="text" id="name"><br><br>
 
+        <label>Your Stargazing Experience:</label><br>
+        <textarea id="story" rows="4"></textarea><br><br>
+
+        <button type="submit">Submit Story</button>
+      </form>
+    </div>
+
+    <div class="box">
+      <h2>Upload a Photo</h2>
+      <input type="file" id="photoUpload"><br><br>
+      <button id="uploadBtn">Upload Photo</button>
+      <div id="photos"></div>
+    </div>
+
+    <button onclick="window.location.href='index.html'">Back to Homepage</button>
   </div>
 
+  <footer>
+    <p>✨ Starlight Beginners — Community Corner ✨</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
-<script scr="script.js"></script>
-<h1>Community Corner</h1>
-
-<h2> Share Your Stargazing Experiences</h2>
-<form id="storyForm">
-    <label>Your Name:</label><br>
-    <input type="text" id="name"><br><br>
-
-    <label>Your Story:</label><br>
-    <textarea id="story"></textarea><br><br>
-
-    <button type="submit">Post Story</button>
-</form>
-
-<h2>Upload a Photo</h2>
-<input type="file" id="photoUpload">
-<button id="uploadBtn">Upload Photo</button>
-
-<div id="photos"></div>
-
-<div id="stories"></div>
-<p>A welcoming space to share your stories.</p>
-
-<h2>Post Photos</h2>
-<p>Upload your favourite night sky pictures.</p>
-
-<h2>Celebrate Astronomy Wins</h2>
-<p>Big or small - every astronomy moment matters</p>
-
-<button onclick="window.location.href='index.html'">Back to Homepage</button>
-
-<script src="script.js"></script>
+</html>

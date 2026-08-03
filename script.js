@@ -14,69 +14,13 @@ const db = firebase.firestore();
 const stroage = firebase.storage();
 const auth = firebase.auth();
 
-const form = document.getElementById('storyForm');
-const storiesDiv = document.getElementById('stories');
 
-form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const story = document.getElementById('story').value;
-
-    // Save story permanently in Firebase
-    await db.collection("stories").add({
-        name: name,
-        story: story,
-        timestamp: Date.now()
-    });
-
-    form.reset();
+// Fade-in effect on page load
+window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
 });
 
-// Load stories when page opens 
-db.collection("stories").orderBy("timestamp", "desc").onSnapshot((snapshot) =>
-    storiesDiv.innerHTML = "";
-    snapshot.forEach((doc) => {
-        const data = doc.data();
-        const newStory = document.createElement('p');
-        newStory.textContent = '${data.name}: ${data.story}';
-        storiesDiv.appendChild(newStory);
-    });
-});
-
-const uploadBtn = document.getElementById('uploadBtn');
-const photoUpload = document.getElementById('photoUpload');
-const photosDiv = document.getElementById('photos');
-
-uploadBtn.addEventListener('click', async () => {
-  const file = photoUpload.files[0];
-  if (!file) return;
-
-  const storageRef = storage.ref('photos/' + file.name);
-  await storageRef.put(file);
-  const url = await storageRef.getDownloadURL();
-
-  await db.collection("photos").add({
-    url: url,
-    timestamp: Date.now()
-  });
-});
-
-// Load photos
-db.collection("photos").orderBy("timestamp", "desc").onSnapshot((snapshot) => {
-  photosDiv.innerHTML = "";
-  snapshot.forEach((doc) => {
-    const data = doc.data();
-    const img = document.createElement('img');
-    img.src = data.url;
-    img.style.width = "200px";
-    img.style.margin = "10px";
-    img.style.borderRadius = "10px";
-    img.style.boxShadow = "0 0 10px #fff";
-    photosDiv.appendChild(img);
-  });
-});
-
+// Star generator
 function createStars(count) {
   for (let i = 0; i < count; i++) {
     const star = document.createElement('div');
@@ -91,6 +35,18 @@ function createStars(count) {
 }
 
 createStars(150);
+
+// Scroll reveal for boxes and sections
+const revealElements = document.querySelectorAll('.box, h2, p, form, div');
+
+window.addEventListener('scroll', () => {
+  revealElements.forEach(el => {
+    const position = el.getBoundingClientRect().top;
+    if (position < window.innerHeight - 100) {
+      el.classList.add('revealed');
+    }
+  });
+});
 
 <script scr="script.js"></script>
 
