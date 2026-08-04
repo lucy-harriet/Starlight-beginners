@@ -1,10 +1,4 @@
 /* General page setup */
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="../Style/style.css">
-  <title>Community Corner</title>
-</head>
-
 body {
   margin: 0;
   min-height: 100vh;
@@ -33,7 +27,7 @@ body.loaded {
 
 /* Hero section (homepage) */
 .hero {
-  background-image: url('images/space-bg.jpg');
+  background-image: url('../images/space-bg.jpg');
   background-size: cover;
   background-position: center;
   padding: 120px 20px;

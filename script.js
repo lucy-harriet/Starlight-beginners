@@ -1,10 +1,6 @@
-// Firebase setup
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="../Style/style.css">
-  <title>Community Corner</title>
-</head>
-
+// -----------------------------
+// Firebase Setup
+// -----------------------------
 const firebaseConfig = {
   apiKey: "AIzaSyBybH0eHPjM0f1pAcRk5_Q5v0t_iPylaH0",
   authDomain: "starlight-beginners.firebaseapp.com",
@@ -21,24 +17,36 @@ const db = firebase.firestore();
 const storage = firebase.storage();
 const auth = firebase.auth();
 
+
+// -----------------------------
 // Fade-in effect on page load
+// -----------------------------
 window.addEventListener('load', () => {
   document.body.classList.add('loaded');
 });
 
-// Star generator
+
+// -----------------------------
+// Star Generator
+// -----------------------------
 function createStars(count) {
   for (let i = 0; i < count; i++) {
     const star = document.createElement('div');
     star.classList.add('star');
-    star.style.width = Math.random() * 3 + 'px';
-    star.style.height = star.style.width;
+
+    const size = Math.random() * 3 + 'px';
+    star.style.width = size;
+    star.style.height = size;
+
     star.style.top = Math.random() * window.innerHeight + 'px';
     star.style.left = Math.random() * window.innerWidth + 'px';
+
     star.style.animationDelay = Math.random() * 2 + 's';
+
     document.body.appendChild(star);
   }
 }
 
 createStars(150);
+
 
