@@ -1,4 +1,10 @@
 // Firebase setup
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../Style/style.css">
+  <title>Community Corner</title>
+</head>
+
 const firebaseConfig = {
   apiKey: "AIzaSyBybH0eHPjM0f1pAcRk5_Q5v0t_iPylaH0",
   authDomain: "starlight-beginners.firebaseapp.com",
